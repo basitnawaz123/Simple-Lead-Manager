@@ -15,6 +15,7 @@ const Leads: React.FC<LeadsProps> = ({ leads }) => {
             <th className="py-2 px-4 border-b">Name</th>
             <th className="py-2 px-4 border-b">Email</th>
             <th className="py-2 px-4 border-b">Status</th>
+            <th className="py-2 px-4 border-b">Created At</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +24,9 @@ const Leads: React.FC<LeadsProps> = ({ leads }) => {
               <td className="py-2 px-4 border-b">{lead.name}</td>
               <td className="py-2 px-4 border-b">{lead.email}</td>
               <td className="py-2 px-4 border-b">{lead.status}</td>
+              <td className="py-2 px-4 border-b">
+                {new Date(lead.createdAt).toLocaleString()}
+              </td>
             </tr>
           ))}
         </tbody>
